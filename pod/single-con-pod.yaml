@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: single-container-pod     
+spec:
+ nodeName: minikub
+ containers: 
+   - name: single-container             
+     image: httpd

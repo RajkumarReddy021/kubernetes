@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+     name: first-deployment
+spec:
+     replicas: 3
+     selector:
+       matchLabels:
+           a: america
+     template:
+        metadata:
+          labels:
+             a: america
+        spec:
+           containers:
+             - name: container-1
+               image: httpdds
