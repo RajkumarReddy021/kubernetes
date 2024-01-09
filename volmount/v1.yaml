@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: first-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      a: america
+  template:
+    metadata:
+      labels:
+        a: america
+    spec:
+      containers:
+      - name: firstcontainer
+        image: httpd
+        volumeMounts:
+        - name: second-volume
+          mountPath: /app
+      volumes:
+      - name: second-volume
+        configMap:
+          name: first-cm
+

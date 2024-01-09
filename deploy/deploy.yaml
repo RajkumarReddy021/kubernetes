@@ -14,4 +14,7 @@ spec:
         spec:
            containers:
              - name: container-1
-               image: httpdds
+               image: httpd
+               envFrom:
+               - configMapRef:
+                       name: second-cm
